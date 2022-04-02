@@ -11,10 +11,8 @@ const calcularPorcentagem = () => {
     valorTotal.innerText = `Valor Total: R$ ${totalDaConta
         .toFixed(2)
         .replace(".", ",")} Reais`;
-    if (totalDaConta == NaN) {
-        console.log();
-    }
-
+    document.getElementById("almoco").value = "";
+    document.getElementById("porcentagem").value = "";
     // console.log(totalDaConta);
 };
 
