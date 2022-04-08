@@ -11,8 +11,8 @@ const calcularPorcentagem = () => {
     valorTotal.innerText = `Valor Total: R$ ${totalDaConta
         .toFixed(2)
         .replace(".", ",")} Reais`;
-    document.getElementById("almoco").value = "";
-    document.getElementById("porcentagem").value = "";
+    almoco.value = "";
+    porcentagem.value = "";
     // console.log(totalDaConta);
 };
 
