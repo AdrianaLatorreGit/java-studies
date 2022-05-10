@@ -5,8 +5,8 @@ const valorTotal = document.getElementById("valor-total");
 
 //Calcular porcentagem
 const calcularPorcentagem = () => {
-    const valorDoAlmoço = Number(almoco.value);
-    const valorDaGorjeta = Number(porcentagem.value) / 100;
+    const valorDoAlmoço = Number(almoco.value.replace(",", "."));
+    const valorDaGorjeta = Number(porcentagem.value.replace(",", ".")) / 100;
     const totalDaConta = valorDoAlmoço + valorDoAlmoço * valorDaGorjeta;
     valorTotal.innerText = `Valor Total: R$ ${totalDaConta
         .toFixed(2)
