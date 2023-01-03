@@ -1,0 +1,68 @@
+abstract class Veiculo {
+
+    String nome;
+    int qtdRodas;
+
+    Veiculo(String nome, int qtdRodas) {
+        this.nome = nome;
+        this.qtdRodas = qtdRodas;
+    }
+
+    abstract void acelerar();
+
+    void acelerar(int intensidade) {
+        System.out.println("intensidade: " + intensidade);
+    }
+
+}
+
+interface Eletrificado {
+
+    void motorEletrico();
+
+}
+
+class Carro extends Veiculo {
+
+
+    Carro(String nome, int qtdRodas) {
+        super(nome, qtdRodas);
+    }
+
+    @Override
+    void acelerar() {
+        System.out.println("Acelerar " + nome + " com " + qtdRodas + " rodas");
+    }
+}
+
+class Moto extends Veiculo implements Eletrificado {
+
+
+    Moto(String nome, int qtdRodas) {
+        super(nome, qtdRodas);
+    }
+
+    @Override
+    void acelerar() {
+        System.out.println("Acelerar " + nome + " com " + qtdRodas + " rodas");
+    }
+
+    @Override
+    public void motorEletrico() {
+        System.out.println("Rodando com motor elétrico");
+    }
+}
+
+class Scratch {
+    public static void main(String[] args) {
+
+        Carro carro = new Carro("Gol", 5);
+        carro.acelerar();
+        carro.acelerar(30);
+
+        Moto moto = new Moto("Honda", 2);
+        moto.acelerar();
+        moto.motorEletrico();
+        moto.acelerar(10);
+    }
+}
